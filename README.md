@@ -1,2 +1,0 @@
-# red-play
-THE BEST VIDEO PLAYER OF ALL TIME 
