@@ -5,6 +5,8 @@ const volumeBar = document.getElementById('volumeBar');
 const fullScreenBtn = document.getElementById('fullScreen');
 const timeDisplay = document.getElementById('time');
 const videoList = document.getElementById('videoList');
+const qualitySelect = document.getElementById('qualitySelect');
+const suggestedVideos = document.querySelectorAll('.suggested li');
 
 // Play / Pause
 playPauseBtn.addEventListener('click', () => {
@@ -54,10 +56,29 @@ fullScreenBtn.addEventListener('click', () => {
 
 // Playlist click
 videoList.addEventListener('click', (e) => {
-    if(e.target && e.target.tagName === 'LI') {
-        const src = e.target.getAttribute('data-src');
+    const li = e.target.tagName === 'LI' ? e.target : e.target.parentElement;
+    const src = li.getAttribute('data-src');
+    video.src = src;
+    video.play();
+    playPauseBtn.textContent = '⏸️';
+});
+
+// Suggested Videos click
+suggestedVideos.forEach(item => {
+    item.addEventListener('click', () => {
+        const src = item.getAttribute('data-src');
         video.src = src;
         video.play();
         playPauseBtn.textContent = '⏸️';
-    }
+    });
+});
+
+// Quality Change
+qualitySelect.addEventListener('change', () => {
+    const currentTime = video.currentTime;
+    const isPlaying = !video.paused;
+    video.src = qualitySelect.value;
+    video.load();
+    video.currentTime = currentTime;
+    if(isPlaying) video.play();
 });
