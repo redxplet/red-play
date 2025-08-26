@@ -1,0 +1,112 @@
+/* استايل عام */
+body {
+  margin: 0;
+  padding: 0;
+  background: #0d0d0d;
+  font-family: Arial, sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* حاوية المشغل */
+.player-container {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+/* شعار RED PLAY */
+.logo {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #ff1a1a;
+  font-weight: bold;
+}
+
+/* الفيديو */
+.video {
+  width: 100%;
+  max-height: 500px;
+  border-radius: 12px;
+  background: black;
+  margin-bottom: 15px;
+}
+
+/* عناصر التحكم */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.controls button {
+  background: #ff1a1a;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.controls button:hover {
+  background: #cc0000;
+}
+
+.controls input[type="range"] {
+  cursor: pointer;
+  accent-color: #ff1a1a;
+}
+
+/* رفع الفيديو */
+.upload {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.upload-label {
+  background: #ff1a1a;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.upload-label:hover {
+  background: #cc0000;
+}
+
+#urlInput {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  width: 250px;
+}
+
+#loadUrl {
+  background: #ff1a1a;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+}
+
+#loadUrl:hover {
+  background: #cc0000;
+}
