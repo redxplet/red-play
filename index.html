@@ -1,40 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RED PLAY</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RED PLAY</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="player-container">
-    <h1 class="logo">🎬 RED PLAY</h1>
+    <header>
+        <div class="logo">RED PLAY</div>
+        <input type="text" placeholder="ابحث عن فيديو..." id="searchBar">
+    </header>
 
-    <!-- الفيديو -->
-    <video id="video" class="video" controls>
-      <source src="sample.mp4" type="video/mp4">
-      متصفحك لا يدعم الفيديو.
-    </video>
+    <main>
+        <div class="video-section">
+            <video id="mainVideo" controls>
+                <source src="sample.mp4" type="video/mp4">
+                المتصفح الخاص بك لا يدعم عرض الفيديو.
+            </video>
+            <div class="controls">
+                <button id="playPause">▶️</button>
+                <input type="range" id="progressBar" value="0">
+                <span id="time">0:00 / 0:00</span>
+                <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1">
+                <button id="fullScreen">🖵</button>
+            </div>
+        </div>
 
-    <!-- عناصر التحكم -->
-    <div class="controls">
-      <button id="playPause">⏯</button>
-      <button id="rewind">⏪ 10s</button>
-      <button id="forward">⏩ 10s</button>
-      <input type="range" id="progress" value="0" min="0" max="100">
-      <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
-      <button id="fullscreen">⛶</button>
-    </div>
+        <aside class="playlist">
+            <h3>قائمة التشغيل</h3>
+            <ul id="videoList">
+                <li data-src="sample.mp4">فيديو تجريبي 1</li>
+                <li data-src="sample2.mp4">فيديو تجريبي 2</li>
+                <li data-src="sample3.mp4">فيديو تجريبي 3</li>
+            </ul>
+        </aside>
+    </main>
 
-    <!-- رفع فيديو -->
-    <div class="upload">
-      <label for="fileInput" class="upload-label">📂 اختر فيديو</label>
-      <input type="file" id="fileInput" accept="video/*" hidden>
-      <input type="text" id="urlInput" placeholder="أدخل رابط فيديو (mp4)">
-      <button id="loadUrl">تشغيل الرابط</button>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
